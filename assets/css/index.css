@@ -38,8 +38,8 @@ header {
 	width: 100%;
 
 	padding: 80px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 
 	display: inline-flex;
 	justify-content: space-between;
@@ -61,6 +61,11 @@ header nav a {
 	font-weight: 300;
 	color: var(--branco);
 	font-weight: 500;
+	transition: .4s ease;
+}
+
+header nav a:hover {
+	color: var(--vermelhoclaro);
 }
 
 header .logo{
@@ -119,7 +124,7 @@ header .logo{
   }
 
 #home .btn-forms {
-	padding: 20px 100px;
+	padding: 15px 50px;
 	font-size: 1.2rem;
 }
 
@@ -180,7 +185,7 @@ header .logo{
     position: relative;
 	width: 100%; 
 	min-height: 100vh; 
-    padding: 40px 20px;
+    padding: 40px 40px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -199,7 +204,6 @@ header .logo{
     display: flex;
     align-items: center;
     margin-bottom: 10vh;
-	border-radius: 5px;
 	padding: 100px 0px 100px 0px;
 	text-align: justify;
 }
@@ -226,7 +230,8 @@ header .logo{
 }
 
 #about .img {
-    width: 30em;
+    width: 25em;
+	border: 10px solid var(--branco);
     margin-left: 5em;
-	border-radius: 5px;
+	border-radius: 10px;
 }
