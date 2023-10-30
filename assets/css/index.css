@@ -1,6 +1,12 @@
 :root {
-    --rosaclaro:#f0eeee;
+	--vermelhoescuro: #AE3E63;
+	--vermelhoclaro: #d3537e;
+    --rosaescuro: #C670B1;
+	--rosaclaro:#F6C6EA;
 
+	--verdeagua: #6C9F97;
+	--verdeescuro: #588F87;
+	--verdeclaro: #CDF0EA;
 
     --cinza900: #1b1f27;
     --cinza800: #3c4049;
@@ -23,7 +29,6 @@
 }
 
 body {
-	background: var(--rosaclaro);
 	color: var(--cinza900);
 }
 
@@ -66,18 +71,20 @@ header .logo{
 .btn-forms {
 	border: none;
 	border-radius: 5px;
+
 	padding: 10px 20px;
-	background-color: rgb(182, 65, 65);
+
+	background-color: var(--vermelhoescuro);
 	font-size: 1.0em;
 	font-weight: 700;
 	color: var(--branco);
-	cursor: pointer;
 
+	cursor: pointer;
+	transition: .4s ease;
 }
 
 .btn-forms:hover {
-	color: var(--preto);
-	transition: all .5s ease-out;
+	background-color: var(--vermelhoclaro);
 }
 
 /*---------- SEÇÃO HOME -----------*/
@@ -108,7 +115,7 @@ header .logo{
 
   .text p {
 	font-size: 2rem;
-	padding-bottom: 2rem;
+	padding-bottom: 1rem;
   }
 
 #home .btn-forms {
@@ -130,7 +137,7 @@ header .logo{
   }
 
 .slide {
-	height: 80px;
+	height: 90px;
 	display: flex;
 	align-items: center;
 	animation: slideshow 50s linear infinite;
@@ -173,11 +180,10 @@ header .logo{
     position: relative;
 	width: 100%; 
 	min-height: 100vh; 
-    padding: 100px 30px;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: pink;
 }
 
 #about {
@@ -193,8 +199,6 @@ header .logo{
     display: flex;
     align-items: center;
     margin-bottom: 10vh;
-
-	background-color: var(--branco);
 	border-radius: 5px;
 	padding: 100px 0px 100px 0px;
 	text-align: justify;
@@ -209,7 +213,7 @@ header .logo{
 }
 
 #about p {
-    font-size: var(--texto-simples);
+    font-size: 1rem;
 }
 
 #about b {
@@ -222,7 +226,7 @@ header .logo{
 }
 
 #about .img {
-    width: 25em;
+    width: 30em;
     margin-left: 5em;
 	border-radius: 5px;
 }
