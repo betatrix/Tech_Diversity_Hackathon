@@ -82,7 +82,7 @@ header .logo{
 
 /*---------- SEÇÃO HOME -----------*/
 #home {
-	background-image: url(/assets/images/background_home.png);
+	background-image: url(../images/background_home.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -181,7 +181,7 @@ header .logo{
 }
 
 #about {
-	background-image: url(/assets/images/background_about.png);
+	background-image: url(../images/background_about.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
