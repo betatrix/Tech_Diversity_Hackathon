@@ -1,0 +1,146 @@
+/* ------------------- Definição de variáveis para as cores ------------------------*/
+:root {
+    --btn-color1: #da5656;
+    --btn-color2: #EF9595;
+    --purple-color: #ab82ec;
+    --white-color: #fdfdfd;
+    --grey-color: #6b6b6b;
+    --filter: rgba(32, 32, 32, 0.781);
+    --shadow1: rgba(50, 50, 93, 0.25);
+    --shadow2: rgba(0, 0, 0, 0.3);
+}
+
+
+/* ------------------- Aplicavel em toda a página ------------------------*/
+* {
+    font-family: "Montserrat", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #333;
+}
+
+html,
+body {
+    height: auto;
+    min-height: 100vh;
+}
+
+html {
+    background: linear-gradient(180deg, #EF9595 0%, #EDDFCD 100%);
+}
+
+input:focus {
+    outline: none;
+}
+
+
+/* ------------------- Estilização do conteúdo ------------------------*/
+#register-container {
+    max-width: 1200px;
+    min-height: 80vh;
+    margin: 2rem auto;
+    display: flex;
+    box-shadow: var(--shadow1) 0px 13px 27px -5px, var(--shadow2) 0px 8px 16px -8px;
+}
+
+
+/* ------------------- Estilização da imagem ------------------------*/
+#register-banner {
+    background: url("#");
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    border-radius: 5px;
+}
+
+#banner-layer {
+    background-color: var(--filter);
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#register-banner h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: var(--white-color);
+    word-spacing: 50rem;
+}
+
+
+/* ------------------- Estilização do formulário em si ------------------------*/
+#register-form {
+    background-color: var(--white-color);
+    padding: 2rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+#register-form h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+}
+
+#register-form p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--grey-color);
+    font-size: 0.9rem;
+}
+
+
+/* ------------------- Estilização dos inputs ------------------------*/
+.form-control {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control label {
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+}
+
+.form-control input {
+    border: none;
+    border-bottom: 1px solid #aaa;
+    padding: 0.6rem 0;
+}
+
+#register-form button {
+    background-color: var(--btn-color1);
+    color: var(--white-color);
+    opacity: 0.8;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 1.4rem;
+    max-width: 150px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: 0.4s;
+}
+
+#register-form button:hover {
+    background-color: var(--btn-color2);
+}
+
+/* ------------------- Input inválido ------------------------*/
+.errorInput {
+    background-color: #d11c1c1f !important;
+  }
+
+.red-placeholder::placeholder {
+    color: rgb(136, 8, 8);
+}
+
+#cpfError,
+#cepError {
+    font-size: 12px;
+    color: red;
+}
