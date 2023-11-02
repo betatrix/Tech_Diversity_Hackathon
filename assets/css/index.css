@@ -101,11 +101,10 @@ header .logo{
 
 #home .text {
 	width: 100%; /* Defina a largura para 100% para ocupar toda a largura da tela */
-	min-height: 93vh; /* Garanta que a seção home tenha pelo menos a altura da tela */
+	min-height: 100vh; /* Garanta que a seção home tenha pelo menos a altura da tela */
 	display: flex;
 	justify-content: center; /* Centralize o conteúdo verticalmente */
 	align-items: center; /* Centralize o conteúdo horizontalmente */
-	padding-top: 90px;
   }
 
 
@@ -132,16 +131,18 @@ header .logo{
 
 /*----------- SLIDESHOW COM OS PATROCINADORES -----------*/
 .slider {
+	position: absolute; /* Define a posição como absoluta */
+	bottom: 0; /* Alinha o slider na parte inferior da seção */
 	max-width: 100%; /* Largura máxima responsiva */
 	width: 100%; /* Para ocupar toda a largura */
 	background: var(--branco);
-	box-shadow: 0 10px 20px -10px var(--preto);
+	box-shadow: 0 10px 20px -10px var(--shadow1);
 	display: flex;
 	overflow: hidden;
   }
 
 .slide {
-	height: 120px;
+	height: 70px;
 	display: flex;
 	align-items: center;
 	animation: slideshow 50s linear infinite;
@@ -204,7 +205,7 @@ header .logo{
     display: flex;
     align-items: center;
     margin-bottom: 10vh;
-	padding: 100px 0px 30px 0px;
+	padding: 100px 0px 100px 0px;
 	text-align: justify;
 }
 
