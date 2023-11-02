@@ -14,15 +14,17 @@
 </head>
 
 <body>
+    <a href="../../index.html"><button class="btn-back">&#60 Voltar para home</button></a> <!--o &#60 é um caractere especial-->
     <form>
         <div id="register-container">
+            
             <!-- Formulário de inscrição -->
             <div id="register-form">
-                <h2>Cadastre-se!</h2>
+                <h2>Inscreva-se!</h2>
                 <p>Preencha o formulário para participar do evento!</p>
                 <div class="form-control">
                     <label for="name" id="nameLabel">Nome</label>
-                    <input type="text" id="name" minlength="2" placeholder="Digite o seu nome completo" required />
+                    <input type="text" id="name" placeholder="Digite o seu nome completo" minlength="2" required />
                 </div>
                 <div class="form-control">
                     <label for="cpf" id="cpfLabel">CPF</label>
@@ -32,6 +34,17 @@
                 <div class="form-control">
                     <label for="date" id="dateLabel">Data de Nascimento (você precisa ter 18 anos)</label>
                     <input type="date" id="date" min="1920-01-01" max="2005-10-26" required />
+                </div>
+                <div class="form-control">
+                    <label for="gender" id="genderLabel">Gênero</label>
+                    <select id="gender" required>
+                        <option value="" selected disabled>Selecione</option>
+                        <option>Mulher Cis</option>
+                        <option>Mulher Trans</option>
+                        <option>Homen Cis</option>
+                        <option>Homen Trans</option>
+                        <option>Não Binário</option>
+                      </select>
                 </div>
                 <div class="form-control">
                     <label for="email" id="emailLabel">E-mail</label>
@@ -47,16 +60,8 @@
                     <input type="text" id="address" placeholder="Digite o seu endereço" required />
                 </div>
                 <div class="form-control">
-                    <label for="number" id="numberLabel">Número</label>
-                    <input type="text" id="number" maxlength="4" placeholder="Digite o seu número" required />
-                </div>
-                <div class="form-control">
-                    <label for="password" id="passwordLabel">Senha</label>
-                    <input type="password" id="password" placeholder="Digite a sua senha" required />
-                </div>
-                <div class="form-control">
-                    <label for="confirmpassword" id="confirmpasswordLabel">Confirmação de Senha</label>
-                    <input type="password" id="confirmpassword" placeholder="Confirme a sua senha" required />
+                    <label for="number" id="numberLabel">Telefone</label>
+                    <input type="text" id="number" placeholder="(11) 99999-9999"  minlength="14" maxlength="14" required />
                 </div>
                 <p id="msgError"></p>
                 <button onclick="enviar()">Cadastrar</button>
@@ -64,7 +69,7 @@
 
             <div id="register-banner">
                 <div id="banner-layer">
-                    <h1>Seja bem-vindo</h1>
+                    <h1>TechDiversity Hackathon</h1>
                 </div>
             </div>
 

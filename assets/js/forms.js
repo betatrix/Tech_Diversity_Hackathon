@@ -2,30 +2,30 @@
 const masks = {
     cpf(value) {
         return value
-            .replace(/\D/g, '')
-            .replace(/(\d{3})(\d)/, '$1.$2')
-            .replace(/(\d{3})(\d)/, '$1.$2')
-            .replace(/(\d{3})(\d{1,2})/, '$1-$2')
-            .replace(/(-\d{2})(\d+?$)/, '$1')
+            .replace(/\D/g, '') // Remove caracteres não numéricos
+            .replace(/(\d{3})(\d)/, '$1.$2') // Adiciona ponto após os primeiros 3 dígitos
+            .replace(/(\d{3})(\d)/, '$1.$2') // Adiciona ponto após os próximos 3 dígitos
+            .replace(/(\d{3})(\d{1,2})/, '$1-$2') // Adiciona hífen e os últimos dígitos
+            .replace(/(-\d{2})(\d+?$)/, '$1') // Remove caracteres após os últimos 2 dígitos
     },
     cep(value) {
         return value
-            .replace(/\D/g, '')
-            .replace(/(\d{5})(\d)/, '$1-$2')
-            .replace(/(-\d{3})(\d+?$)/, '$1')
+            .replace(/\D/g, '') // Remove caracteres não numéricos
+            .replace(/(\d{5})(\d)/, '$1-$2') // Adiciona hífen após os primeiros 5 dígitos
+            .replace(/(-\d{3})(\d+?$)/, '$1') // Remove caracteres após os últimos 3 dígitos
     }
 }
+
 
 // Validação do CEP
 const cep = document.getElementById('cep');
 const address = document.getElementById('address');
 const msgError = document.querySelector('#cepError');
 cep.addEventListener('input', async (e) => {
-    e.target.value = masks["cep"](e.target.value);
-    var validarCep = cep.value.replaceAll('.', '').replace('-', '');
-    if (validarCep.length == 8) {
-        var cepValido = await buscaCEP(validarCep);
-        console.log(cepValido);
+    e.target.value = masks["cep"](e.target.value); // Aplica a máscara de CEP
+    var validarCep = cep.value.replaceAll('.', '').replace('-', ''); // Remove caracteres especiais
+    if (validarCep.length == 8) { // Se o CEP tiver 8 dígitos...
+        var cepValido = await buscaCEP(validarCep); // Busca informações de endereço com base no CEP
 
         if (!cepValido) {
             msgError.innerHTML = '*Insira um CEP válido';
@@ -35,10 +35,10 @@ cep.addEventListener('input', async (e) => {
             msgError.innerHTML = '';
             cep.classList.remove("errorInput");
         }
-        address.value = cepValido.logradouro + ', ' + cepValido.bairro + ', ' + cepValido.localidade + ' - ' + cepValido.uf;    
-
+        address.value = cepValido.logradouro + ', ' + cepValido.bairro + ', ' + cepValido.localidade + ' - ' + cepValido.uf; // Preenche os campos de endereço
     }
 }, false)
+
 
 
 // Utilização de fetch para consumir API de CEP
@@ -61,14 +61,13 @@ async function buscaCEP(cep) {
 
 
 // Validação do CPF
-
 const cpf = document.getElementById('cpf');
 cpf.addEventListener('input', (e) => {
     const msgError = document.querySelector('#cpfError');
-    e.target.value = masks["cpf"](e.target.value);
-    var validarCpf = cpf.value.replaceAll('.', '').replace('-', '');
-    if (validarCpf.length == 11) {
-        var cpfValido = TestaCPF(validarCpf);
+    e.target.value = masks["cpf"](e.target.value); // Aplica a máscara de CPF
+    var validarCpf = cpf.value.replaceAll('.', '').replace('-', ''); // Remove caracteres especiais
+    if (validarCpf.length == 11) { // Se o CPF tiver 11 dígitos...
+        var cpfValido = TestaCPF(validarCpf); // Realiza a validação do CPF
 
         if (!cpfValido) {
             msgError.innerHTML = '*Insira um CPF válido';
@@ -80,11 +79,13 @@ cpf.addEventListener('input', (e) => {
     }
 }, false)
 
+
+// Função para validar o CPF
 function TestaCPF(validarCpf) {
     var Soma;
     var Resto;
     Soma = 0;
-    if (validarCpf == "00000000000") return false;
+    if (validarCpf == "00000000000") return false; // CPF com todos os dígitos iguais é inválido
 
     for (i = 1; i <= 9; i++) Soma = Soma + parseInt(validarCpf.substring(i - 1, i)) * (11 - i);
     Resto = (Soma * 10) % 11;
@@ -98,11 +99,12 @@ function TestaCPF(validarCpf) {
 
     if ((Resto == 10) || (Resto == 11)) Resto = 0;
     if (Resto != parseInt(validarCpf.substring(10, 11))) return false;
-    return true;
+
+    return true; // Se a validação for bem-sucedida, o CPF é considerado válido
 }
 
 
-//Validação de preenchimento dos campos 
+// Validação de preenchimento dos campos 
 function enviar() {
     let nome = document.querySelector('#name');
     let nomeLabel = document.querySelector('#nameLabel');
@@ -125,12 +127,10 @@ function enviar() {
     let numero = document.querySelector('#number');
     let numeroLabel = document.querySelector('#numberLabel');
 
-    let senha = document.querySelector('#password');
-    let senhaLabel = document.querySelector('#passwordLabel');
+    let genero = document.querySelector('#gender');
+    let generoLabel = document.querySelector('#genderLabel');
 
-    let confirma = document.querySelector('#confirmpassword');
-    let confirmaLabel = document.querySelector('#confirmpasswordLabel');
-
+    // Cria uma lista de objetos com campos e seus respectivos labels
     let campos = [
         { field: nome, label: nomeLabel },
         { field: cpf, label: cpfLabel },
@@ -139,15 +139,15 @@ function enviar() {
         { field: email, label: emailLabel },
         { field: endereco, label: enderecoLabel },
         { field: numero, label: numeroLabel },
-        { field: senha, label: senhaLabel },
-        { field: confirma, label: confirmaLabel }
+        { field: genero, label: generoLabel },
     ];
 
     let msgError = document.querySelector('#msgError');
     let hasErrors = false;
 
+    // Itera sobre a lista de campos para verificar se estão preenchidos
     campos.forEach((campo) => {
-        if (campo.field.value.trim() === '') {
+        if (campo.field.value.trim() === '') { // Verifica se o campo está vazio
             campo.field.classList.add("errorInput");
             campo.field.classList.add('red-placeholder');
             hasErrors = true;
@@ -157,9 +157,11 @@ function enviar() {
         }
     });
 
-    if (hasErrors) {
+    if (hasErrors) { // Se algum campo estiver vazio, exibe uma mensagem de erro
         msgError.style.display = 'block';
         msgError.innerHTML = '<strong>Preencha todos os campos!</strong>';
-        campos[0].field.focus();
+        campos[0].field.focus(); // Define o foco no primeiro campo vazio
+    } else {
+        alert('Formulário enviado com sucesso!'); // Exibe uma mensagem de sucesso
     }
 }

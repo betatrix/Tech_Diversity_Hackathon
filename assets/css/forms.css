@@ -1,11 +1,11 @@
 /* ------------------- Definição de variáveis para as cores ------------------------*/
 :root {
-    --btn-color1: #da5656;
-    --btn-color2: #EF9595;
-    --purple-color: #ab82ec;
+    --btn-color1: #AE3E63;
+    --btn-color2: #d3537e;
+    
     --white-color: #fdfdfd;
     --grey-color: #6b6b6b;
-    --filter: rgba(32, 32, 32, 0.781);
+    --filter: rgba(20, 20, 20, 0.699);
     --shadow1: rgba(50, 50, 93, 0.25);
     --shadow2: rgba(0, 0, 0, 0.3);
 }
@@ -27,7 +27,9 @@ body {
 }
 
 html {
-    background: linear-gradient(180deg, #EF9595 0%, #EDDFCD 100%);
+    background-image: url(../images/background_forms.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 input:focus {
@@ -35,6 +37,27 @@ input:focus {
 }
 
 
+/* ------------------- Estilização do botão de voltar para home ------------------------*/
+.btn-back {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    padding: 10px 20px;
+
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white-color);
+    cursor: pointer;
+
+    transition: .2s ease-in-out;
+  }
+  
+  .btn-back:hover {
+    background-color: #6b6b6b;
+  }
 /* ------------------- Estilização do conteúdo ------------------------*/
 #register-container {
     max-width: 1200px;
@@ -47,9 +70,8 @@ input:focus {
 
 /* ------------------- Estilização da imagem ------------------------*/
 #register-banner {
-    background: url("#");
+    background: url("../images/img-forms.jpg");
     background-size: cover;
-    background-position: center;
     width: 50%;
     border-radius: 5px;
 }
@@ -94,6 +116,22 @@ input:focus {
     font-size: 0.9rem;
 }
 
+#gender {
+    width: 100%; 
+    padding: 10px; 
+
+    border: none;
+    border: 1px solid #aaa;
+    background-color: #ffffff; 
+    color: #333; 
+    cursor: pointer;
+  }
+  
+  /* Estilizando as opções da combobox */
+  #gender option {
+    background-color: #ffffff; 
+    color: #333;
+  }
 
 /* ------------------- Estilização dos inputs ------------------------*/
 .form-control {
@@ -116,7 +154,7 @@ input:focus {
 #register-form button {
     background-color: var(--btn-color1);
     color: var(--white-color);
-    opacity: 0.8;
+    font-weight: 600;
     border: none;
     border-radius: 2rem;
     padding: 1rem 1.4rem;
