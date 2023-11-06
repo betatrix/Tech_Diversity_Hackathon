@@ -234,3 +234,165 @@ header .logo{
     margin-left: 5em;
 	border-radius: 10px;
 }
+
+/*----------- SEÇÃO PREMIAÇÃO -----------*/
+#award {
+    background-image: url(../images/background_award.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 40px 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.line{
+	flex: 1;
+	height: 0.5px;
+	background-color: #000000;
+	margin: 0 10px;
+}
+.title{
+	text-align: center;
+}
+.title-container{
+	display: flex;
+	align-items: center;
+}
+
+#award h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+
+.image-award {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-item {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    max-width: 20%;
+    vertical-align: top;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+}
+
+.image-item p {
+    margin-top: 5px;
+}
+
+
+
+
+/*----------- SEÇÃO CONTATO-----------*/
+#contact {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(../images/background_contact.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#contact h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.content-contact {
+    padding-top: 10px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10vh;
+    padding: 100px 0px 100px 0px;
+    text-align: justify;
+}
+
+#refcontact {
+    width: 100%; /* Define a largura para o texto e links */
+}
+
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    
+}
+
+.contact-info a{
+    text-decoration: none;
+    color: var(--preto);
+
+}
+.contact-info a:hover{
+    transition: .4s ease;
+    color: var(--vermelhoclaro);
+
+}
+
+.contact-info img {
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    height: 50px; /* Ajuste o tamanho conforme necessário */
+    margin-right: 10px; /* Adicione margem entre as imagens e os links */
+}
+
+.img {
+    width: 25em;
+    border: 10px solid var(--branco);
+    border-radius: 10px;
+}
+
+.img-phone,
+.img-email {
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    height: 50px; /* Ajuste o tamanho conforme necessário */
+    margin-left: 10px; /* Adicione margem entre as imagens e os links */
+}
+
+
+/*----------- FOOTER-----------*/
+
+footer {
+    background-color: var(--vermelhoclaro);
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.footer-content {
+    font-size: 14px;
+    color: var(--branco);
+}
+
+/* Estilo da marca d'água */
+.footer-content::before {
+    content: "TechDiversity 2023";
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.1); /* Cor da marca d'água */
+    pointer-events: none; /* Evita interação do usuário com a marca d'água */
+}
