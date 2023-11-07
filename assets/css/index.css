@@ -43,7 +43,7 @@ header {
 	justify-content: space-between;
 	align-items: center;
 
-	background-color: var(--cinza900);
+	background-color: var(--verdeescuro);
 	z-index: 10; /* sobreposição maior que outros index */
 }
 
@@ -234,3 +234,72 @@ header .logo{
     margin-left: 5em;
 	border-radius: 10px;
 }
+
+#faq {
+	position: relative;
+	width: 100%; 
+	min-height: 100vh; 
+    padding: 40px 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#faq {
+	background-image: url(../images/background_faq.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#faq .content {
+    padding-top: 10px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10vh;
+	padding: 100px 0px 100px 0px;
+	text-align: justify;
+	flex-direction: column;
+}
+
+#faq .introduction {
+	margin-bottom: 2rem;
+}
+
+#faq h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 2px solid #0000009a;
+	text-align: center;
+}
+
+.questions {
+	width: 100%;
+	max-width: 900px;
+	font-size: 1rem;
+  }
+  
+  .questions details summary {
+	background-color: #63979b;
+	padding: 20px;
+	color: #fff;
+	border-radius: 0.5rem;
+  }
+  
+  .questions details p {
+	background-color: #fff;
+	color: #333;
+	padding: 2%;
+  }
+  
+  .questions details {
+	margin: 10px 0;
+	background-color: #ffffff;
+  }
+  
+  .questions summary:hover {
+	background-color: #f79c9c;
+  }
