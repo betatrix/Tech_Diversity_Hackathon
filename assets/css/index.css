@@ -70,6 +70,10 @@ header .logo{
 	text-decoration: none;
 	padding-top: 2px;
 }
+header .logo img {
+    width: 80px; /* Altere o valor conforme necessário para ajustar o tamanho do logo */
+}
+
 
 .btn-forms {
 	border: none;
@@ -562,6 +566,13 @@ ul {
     padding-top: 30px;
 }
 
+#award h4 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
 
 .image-award {
     display: flex;
@@ -574,14 +585,20 @@ ul {
     display: inline-block;
     margin: 10px;
     text-align: center;
-    max-width: 20%;
+    max-width: 25%;
     vertical-align: top;
 }
 
 .image-item img {
     width: 100%;
     height: auto;
+    transition: transform 0.3s; /* Adiciona uma transição suave de 0.3 segundos */
 }
+
+.image-item img:hover {
+    transform: scale(1.1); /* Aumenta o tamanho da imagem em 10% quando o mouse passar por cima */
+}
+
 
 .image-item p {
     margin-top: 5px;
@@ -603,10 +620,14 @@ ul {
 }
 
 #contact h3 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     padding-bottom: 20px;
     padding-top: 20px;
+}
+/* Adicione este trecho para aumentar o tamanho do texto do conteúdo */
+#contact .content-contact p {
+    font-size: 2em; /* Ajuste o tamanho do texto para 1.1em (por exemplo) */
 }
 
 #contact .content-contact {
@@ -619,30 +640,34 @@ ul {
     margin-bottom: 10vh;
     padding: 100px 0px 100px 0px;
     text-align: justify;
-}
-
-
-.contact-info {
-    display: flex;
-    align-items: center;
-}
-
-.contact-info a{
-    text-decoration: none;
-    color: var(--preto);
-
-}
-.contact-info a:hover{
-    transition: .4s ease;
-    color: var(--vermelhoclaro);
-
+    flex-direction: row-reverse; /* Altera a direção dos itens para inverter a ordem */
 }
 
 .img {
     width: 25em;
     border: 10px solid var(--branco);
     border-radius: 10px;
-	margin-left: 5em;
+    margin-right: 5em; /* Ajusta a margem para posicionar a imagem do lado direito */
+    margin-left: 0; /* Remove a margem à esquerda */
+}
+
+#contact h3 {
+    margin-right: 20px; /* Ajusta a margem entre o texto e a imagem */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: var(--preto);
+}
+
+.contact-info a:hover {
+    transition: .4s ease;
+    color: var(--vermelhoclaro);
 }
 
 .img-phone,
@@ -651,7 +676,6 @@ ul {
     height: 50px; /* Ajuste o tamanho conforme necessário */
     margin-right: 10px; /* Adicione margem entre as imagens e os links */
 }
-
 
 /*----------- FOOTER-----------*/
 footer {
