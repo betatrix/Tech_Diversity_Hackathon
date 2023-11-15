@@ -13,8 +13,31 @@ const masks = {
             .replace(/\D/g, '') // Remove caracteres não numéricos
             .replace(/(\d{5})(\d)/, '$1-$2') // Adiciona hífen após os primeiros 5 dígitos
             .replace(/(-\d{3})(\d+?$)/, '$1') // Remove caracteres após os últimos 3 dígitos
+    },
+    telefone(value) {
+        return value
+            .replace(/\D/g, '') // Remove caracteres não numéricos
+            .replace(/(\d{2})(\d)/, '($1)$2') // Adiciona parênteses após os primeiros 2 dígitos
+            .replace(/(\d{5})(\d)/, '$1-$2') // Adiciona hífen após os próximos 4 dígitos
+            .replace(/(-\d{4})(\d+?$)/, '$1'); // Remove caracteres após os últimos 4 dígitos
     }
 }
+
+
+const tel = document.getElementById('number');
+
+tel.addEventListener('input', async (e) => {
+    const msgError = document.querySelector('#telefoneError');
+    e.target.value = masks["telefone"](e.target.value); // Aplica a máscara de Telefone
+    if (tel.value.length < 14) {
+        msgError.innerHTML = '*Insira um telefone válido';
+        tel.classList.add("errorInput");
+        return;
+    } else {
+        msgError.innerHTML = '';
+        tel.classList.remove("errorInput");
+    }
+}, false)
 
 
 // Validação do CEP
@@ -27,7 +50,7 @@ cep.addEventListener('input', async (e) => {
     if (validarCep.length == 8) { // Se o CEP tiver 8 dígitos...
         var cepValido = await buscaCEP(validarCep); // Busca informações de endereço com base no CEP
 
-        if (!cepValido) {
+        if (!cepValido || cep.value.length < 9) {
             msgError.innerHTML = '*Insira um CEP válido';
             cep.classList.add("errorInput");
             return;
@@ -157,11 +180,12 @@ function enviar() {
         }
     });
 
-    if (hasErrors) { // Se algum campo estiver vazio, exibe uma mensagem de erro
+    if (hasErrors){
         msgError.style.display = 'block';
         msgError.innerHTML = '<strong>Preencha todos os campos!</strong>';
         campos[0].field.focus(); // Define o foco no primeiro campo vazio
-    } else {
-        alert('Formulário enviado com sucesso!'); // Exibe uma mensagem de sucesso
+    }  else {
+        msgError.style.display = 'none';
     }
+
 }

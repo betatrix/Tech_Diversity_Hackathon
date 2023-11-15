@@ -178,7 +178,8 @@ input:focus {
 }
 
 #cpfError,
-#cepError {
+#cepError,
+#telefoneError {
     font-size: 12px;
     color: red;
 }

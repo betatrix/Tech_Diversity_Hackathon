@@ -10,7 +10,8 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="../css/forms.css" />
-    <script src="../js/forms.js" defer></script>
+    <script src="../js/formsValidations.js" defer></script>
+    <script src="../js/formsSubmit.js" defer></script>
 </head>
 
 <body>
@@ -41,8 +42,8 @@
                         <option value="" selected disabled>Selecione</option>
                         <option>Mulher Cis</option>
                         <option>Mulher Trans</option>
-                        <option>Homen Cis</option>
-                        <option>Homen Trans</option>
+                        <option>Homem Cis</option>
+                        <option>Homem Trans</option>
                         <option>Não Binário</option>
                       </select>
                 </div>
@@ -61,6 +62,7 @@
                 </div>
                 <div class="form-control">
                     <label for="number" id="numberLabel">Telefone</label>
+                    <div id="telefoneError"></div>
                     <input type="text" id="number" placeholder="(11) 99999-9999" required />
                 </div>
                 <p id="msgError"></p>
