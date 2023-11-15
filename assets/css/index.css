@@ -35,9 +35,9 @@ header {
 	position: fixed;
 	width: 100%;
 
-	padding: 50px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding: 40px;
+	padding-top: 3px;
+	padding-bottom: 3px;
 
 	display: inline-flex;
 	justify-content: space-between;
@@ -73,7 +73,7 @@ header .logo {
 }
 
 header .logo img {
-	width: 80px;
+	width: 70px;
 	/* Altere o valor conforme necessário para ajustar o tamanho do logo */
 }
 
@@ -262,11 +262,10 @@ header .logo img {
 	position: relative;
 	width: 100%;
 	min-height: 100vh;
-	padding: 90px 40px;
+	padding: 90px 40px 0px 40px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	padding-bottom: 0px;
 }
 
 #programacao {
@@ -276,7 +275,6 @@ header .logo img {
 }
 
 #programacao .content {
-	padding-top: 10px;
 	position: relative;
 	width: 100%;
 	display: flex;
@@ -303,24 +301,21 @@ header .logo img {
 .days {
 	position: flex;
 	background-color: var(--vermelhoescuro);
-	max-width: 440px;
-	width: 100%;
-	padding: 25px;
+	width: 440px;
+	padding: 30px;
 	border-radius: 10px;
 	justify-content: space-between;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 60px;
 	color: var(--branco);
-	margin-top: 3%;
 	align-items: center;
 	transition: 0.3s all;
-	margin-top: 60px;
 }
 
 .days:hover {
 	background-color: var(--vermelhoclaro);
-	max-width: 450px;
-	margin-top: 3%;
+	width: 450px;
 }
 
 .days h2 {
@@ -501,7 +496,7 @@ ul {
 }
 
 .member img {
-	max-width: 300px;
+	max-width: 250px;
 	border: var(--vermelhoescuro) 10px solid;
 	border-radius: 50%;
 	transition: transform 0.3s, filter 0.3s;
