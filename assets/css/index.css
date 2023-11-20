@@ -54,6 +54,8 @@ header nav {
 	gap: 30px;
 }
 
+
+
 header nav a {
 	text-decoration: none;
 	align-self: center;
@@ -101,6 +103,7 @@ header .logo img {
 #home {
 	background-image: url(../images/background_home.png);
 	background-size: cover;
+	
 	background-repeat: no-repeat;
 }
 
@@ -302,7 +305,7 @@ header .logo img {
 .days {
 	position: flex;
 	background-color: var(--vermelhoescuro);
-	width: 440px;
+	width: 420px;
 	padding: 30px;
 	border-radius: 10px;
 	justify-content: space-between;
