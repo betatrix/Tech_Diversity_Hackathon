@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../css/forms.css" />
+    <script src="../js/formsValidations.js" defer></script>
+    <script src="../js/formsSubmit.js" defer></script>
+</head>
+
+<body>
+    <a href="../../index.html"><button class="btn-back">&#60 Voltar para home</button></a> <!--o &#60 é um caractere especial-->
+    <form>
+        <div id="register-container">
+            
+            <!-- Formulário de inscrição -->
+            <div id="register-form">
+                <h2>Inscreva-se!</h2>
+                <p>Preencha o formulário para participar do evento!</p>
+                <div class="form-control">
+                    <label for="name" id="nameLabel">Nome</label>
+                    <input type="text" id="name" placeholder="Digite o seu nome completo" minlength="2" required />
+                </div>
+                <div class="form-control">
+                    <label for="cpf" id="cpfLabel">CPF</label>
+                    <div id="cpfError"></div>
+                    <input type="text" id="cpf" placeholder="Digite o seu CPF" required />
+                </div>
+                <div class="form-control">
+                    <label for="date" id="dateLabel">Data de Nascimento (você precisa ter 18 anos)</label>
+                    <input type="date" id="date" min="1920-01-01" max="2005-10-26" required />
+                </div>
+                <div class="form-control">
+                    <label for="gender" id="genderLabel">Gênero</label>
+                    <select id="gender" required>
+                        <option value="" selected disabled>Selecione</option>
+                        <option>Mulher Cis</option>
+                        <option>Mulher Trans</option>
+                        <option>Homem Cis</option>
+                        <option>Homem Trans</option>
+                        <option>Não Binário</option>
+                      </select>
+                </div>
+                <div class="form-control">
+                    <label for="email" id="emailLabel">E-mail</label>
+                    <input type="text" type="email" id="email" placeholder="Digite o seu e-mail" required />
+                </div>
+                <div class="form-control">
+                    <label for="cep" id="cepLabel">CEP</label>
+                    <div id="cepError"></div>
+                    <input type="text" id="cep" placeholder="Digite o seu CEP" required />
+                </div>
+                <div class="form-control">
+                    <label for="address" id="addressLabel">Endereço</label>
+                    <input type="text" id="address" placeholder="Digite o seu endereço" required />
+                </div>
+                <div class="form-control">
+                    <label for="number" id="numberLabel">Telefone</label>
+                    <div id="telefoneError"></div>
+                    <input type="text" id="number" placeholder="(11) 99999-9999" required />
+                </div>
+                <p id="msgError"></p>
+                <button onclick="enviar()">Cadastrar</button>
+            </div>
+
+            <div id="register-banner">
+                <div id="banner-layer">
+                    <h1>TechDiversity Hackathon</h1>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+</body>
+
+</html>
